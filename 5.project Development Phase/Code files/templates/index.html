@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduGenie - AI Learning Assistant</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/EduGenie.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+
+    <div class="animated-bg">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+
+    <div class="background">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+    <div class="container">
+
+        <!-- ==========================
+                HERO
+        =========================== -->
+
+<nav class="navbar">
+
+    <div class="navbar-logo">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        <span>EduGenie AI</span>
+
+    </div>
+
+    <button id="newChatBtn" class="new-chat-btn">
+
+        <i class="fa-solid fa-plus"></i>
+
+        New Chat
+
+    </button>
+
+</nav>
+
+       <header class="hero">
+
+            <div class="hero-content">
+
+            <div class="hero-logo">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <h1>EduGenie AI</h1>
+
+            </div>
+
+            <p class="hero-subtitle">
+
+                Your Smart AI Learning Companion
+
+            </p>
+
+            <p class="hero-description">
+
+                🚀 Learn Faster • 📚 Understand Better • 🧠 Practice Smarter
+
+            </p>
+<!-- Theme Toggle -->
+
+<div class="theme-toggle">
+
+    <button id="themeBtn">
+
+        🌙
+
+    </button>
+
+    <button id="newChatBtn" class="new-chat-btn">
+    <i class="fa-solid fa-plus"></i>
+    New Chat
+</button>
+
+</div>
+
+        </header>
+
+        <!-- ==========================
+              FEATURE CARDS
+        =========================== -->
+
+        <div class="features">
+
+            <div class="feature-card" data-task="qa">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                <h3>Ask Questions</h3>
+
+                <p>Get instant AI-powered answers.</p>
+
+            </div>
+
+            <div class="feature-card" data-task="explain">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <h3>Explain Concepts</h3>
+
+                <p>Learn difficult topics easily.</p>
+
+            </div>
+
+            <div class="feature-card" data-task="summary">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <h3>Summarize Notes</h3>
+
+                <p>Convert long notes into concise summaries.</p>
+
+            </div>
+
+            <div class="feature-card" data-task="quiz">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <h3>Generate Quiz</h3>
+
+                <p>Practice with AI-generated questions.</p>
+
+            </div>
+
+            <div class="feature-card" data-task="learning">
+
+                <i class="fa-solid fa-road"></i>
+
+                <h3>Learning Roadmap</h3>
+
+                <p>Get a personalized AI learning path.</p>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================
+                MAIN CARD
+        =========================== -->
+
+        <div class="card">
+
+            <h2>
+
+                <i class="fa-solid fa-brain"></i>
+
+                Start Learning with AI
+
+            </h2>
+
+            <p class="description">
+
+                Ask questions, explain concepts, summarize notes,
+                generate quizzes and receive personalized learning recommendations.
+
+            </p>
+
+            <label for="task">
+
+                Select Task
+
+            </label>
+
+            <select id="task">
+
+                <option value="qa">Question Answering</option>
+
+                <option value="explain">Concept Explanation</option>
+
+                <option value="summary">Text Summarization</option>
+
+                <option value="quiz">Quiz Generation</option>
+
+                <option value="learning">Learning Recommendation</option>
+
+            </select>
+
+            <label for="inputText">
+
+                Your Topic / Question
+
+            </label>
+
+            <div class="input-container">
+
+    <textarea
+        id="inputText"
+        placeholder="Ask anything..."></textarea>
+
+    <button
+        id="voiceBtn"
+        class="voice-btn"
+        title="Speak your question">
+
+        <i class="fa-solid fa-microphone"></i>
+
+    </button>
+
+</div>
+
+<div class="image-upload">
+
+    <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+        hidden>
+
+    <button
+        id="imageBtn"
+        class="copy-btn"
+        type="button">
+
+        <i class="fa-solid fa-image"></i>
+
+        Upload Image
+
+    </button>
+
+    <div id="imagePreview"></div>
+
+</div>
+
+<div class="pdf-upload">
+
+    <input
+        type="file"
+        id="pdfInput"
+        accept=".pdf"
+        hidden>
+
+    <button
+        id="pdfBtnUpload"
+        class="copy-btn"
+        type="button">
+
+        <i class="fa-solid fa-file-pdf"></i>
+
+        Upload PDF
+
+    </button>
+
+    <div id="pdfPreview"></div>
+
+</div>
+               
+               
+
+            <button id="generateBtn">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Generate
+
+            </button>
+
+            <!-- ======================
+                RECENT SEARCHES
+            ======================= -->
+
+<div class="history-card">
+
+    <button id="historyToggle" class="history-toggle">
+
+        <span>
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            Chat History
+
+        </span>
+
+        <span id="historyArrow">▼</span>
+
+    </button>
+
+    <div id="historyContainer">
+
+        <ul id="historyList">
+
+        </ul>
+
+    </div>
+
+</div>
+
+        </div>
+
+                <!-- ==========================
+                OUTPUT CARD
+        =========================== -->
+
+        <div class="output-card">
+
+            <div class="response-header">
+
+                <h2>
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    EduGenie AI
+
+                </h2>
+
+                <div class="action-buttons">
+
+                    <button
+                        id="copyBtn"
+                        class="copy-btn"
+                        onclick="copyResponse()">
+
+                        <i class="fa-regular fa-copy"></i>
+
+                        Copy
+
+                    </button>
+
+                    <button
+                       id="speakBtn"
+                      class="copy-btn"
+                        onclick="speakResponse()">
+
+                        <i class="fa-solid fa-volume-high"></i>
+
+                        Speak
+
+                        </button>
+
+                    <button
+                        id="pdfBtn"
+                        class="copy-btn"
+                        onclick="downloadPDF()">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        PDF
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div id="output">
+
+                <div id="chatContainer">
+
+                    <div class="welcome-card">
+
+                        <h2>
+                            👋 Welcome to EduGenie AI
+                        </h2>
+
+                        <p>
+
+                            I'm your personal AI Learning Assistant.
+
+                        </p>
+
+                        <br>
+
+                        <p>
+
+                            📚 Ask Questions<br><br>
+
+                            🧠 Explain Difficult Concepts<br><br>
+
+                            📝 Summarize Notes<br><br>
+
+                            🎯 Generate Quizzes<br><br>
+
+                            🚀 Create Personalized Learning Roadmaps
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================
+                FOOTER
+        =========================== -->
+
+        <footer>
+
+            © 2026 EduGenie AI |
+            Powered by Google Gemini
+
+        </footer>
+
+    </div>
+
+    <!-- jsPDF -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- JavaScript -->
+
+    <script src="/static/js/EduGenieV2.js"></script>
+
+</body>
+
+</html>
